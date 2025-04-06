@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- Leaflet CSS (Use only one: CDN or local) -->
+        <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> -->
+        <!-- OR: Use local if you prefer -->
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Other Required CSS -->
+        <link rel="stylesheet" href="css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-search.css">
+        <!-- <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css"> -->
+        <link rel="stylesheet" href="css/leaflet-measure.css">
+        
+        <!-- Leaflet JS (Use only one: CDN or local) -->
+        <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> -->
+        <!-- OR: Use local if you prefer -->
+        <script src="js/leaflet.js"></script>
+        
+        <title>Incident Reports</title>
+    </head>
+    <body>
+        <div id="loader-container">
+            <div class="loader"></div>
+            <div class="loader-text">Loading map...</div>
+        </div>
+
+        <div id="form-container">
+            <form id="locationForm" class="mb-4 w-[250px]">
+                <label>Select Location:</label>
+                <input type="text" id="location" name="location" readonly required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"><br>
+
+                <label>Description:</label>
+                <textarea id="description" name="description" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea><br>
+
+                <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 
+                focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add to Map</button>
+                <a href="hazards.html" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 
+                focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Go to Hazards</a>
+            </form>
+        </div>
+
+        <div id="legend">
+            <h4>Legend</h4>
+            <ul id="legend-list">
+                <li><span style="background: rgba(190,178,151,1.0); width: 10px; height: 10px; display: inline-block;"></span> Buildings</li>
+            </ul>
+        </div>
+        
+        <div id="map">
+        </div>
+        <!-- Scripts -->
+        <script src="js/qgis2web_expressions.js"></script>
+        <!-- <script src="js/leaflet.js"></script> -->
+        <!-- <script src="js/L.Control.Layers.Tree.min.js"></script> -->
+        <script src="js/L.Control.Locate.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-measure.js"></script>
+        <script src="js/leaflet-search.js"></script>
+
+        <!-- GeoJSON Data -->
+        <script src="data/PG_Brgy_Boundary_Cadastral_edited_1.js"></script>
+        <script src="data/Buildings_2.js"></script>
+
+        <!-- Initialize Map (Make sure it's the last script to load) -->
+        <!-- <script src="js/map-init.js"></script> -->
+        <script src="js/incidents/incidents.js"></script>
+    </body>
+</html>
