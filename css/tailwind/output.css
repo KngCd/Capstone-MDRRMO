@@ -632,8 +632,25 @@ video {
   top: 1rem;
 }
 
+.top-\[\] {
+  top: ;
+}
+
+.top-\[129px\] {
+  top: 129px;
+}
+
+.left-1\/2 {
+  left: 50%;
+}
+
 .z-\[1000\] {
   z-index: 1000;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mb-4 {
@@ -642,6 +659,14 @@ video {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
 }
 
 .block {
@@ -688,6 +713,18 @@ video {
   height: 56px;
 }
 
+.h-\[74px\] {
+  height: 74px;
+}
+
+.h-\[43px\] {
+  height: 43px;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
 .w-\[250px\] {
   width: 250px;
 }
@@ -716,12 +753,37 @@ video {
   width: 56px;
 }
 
+.w-\[304px\] {
+  width: 304px;
+}
+
+.w-\[43px\] {
+  width: 43px;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .resize {
   resize: both;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-rows-8 {
@@ -760,6 +822,10 @@ video {
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .border {
@@ -880,6 +946,15 @@ video {
   line-height: 1rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-\[17px\] {
+  font-size: 17px;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -939,6 +1014,20 @@ video {
   color: ;
 }
 
+.text-\[6E6E6E\] {
+  color: 6E6E6E;
+}
+
+.text-\[\#6E6E6E\] {
+  --tw-text-opacity: 1;
+  color: rgb(110 110 110 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#000000\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -978,6 +1067,15 @@ video {
 .ring-gray-300 {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity, 1));
+}
+
+.ring-\[\] {
+  --tw-ring-color: ;
+}
+
+.ring-\[\#DDDDDD\] {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(221 221 221 / var(--tw-ring-opacity, 1));
 }
 
 .blur {
