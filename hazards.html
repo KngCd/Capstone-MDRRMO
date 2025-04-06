@@ -6,7 +6,6 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/6.5.0/turf.min.js"></script>
 
@@ -14,7 +13,8 @@
         <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> -->
         <!-- OR: Use local if you prefer -->
         <link rel="stylesheet" href="css/leaflet.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/tailwind/style.css">
+        <link rel="stylesheet" href="css/tailwind/output.css">
         <!-- Add Leaflet Draw CSS -->
         <link rel="stylesheet" href="css/leaflet.draw.css">
 
@@ -46,7 +46,7 @@
             <form id="locationForm" class="mb-4">
                 <!-- Hazard Type -->
                 <label for="hazard_type" class="block text-sm font-medium text-gray-700">Hazard Type:</label>
-                <select id="hazard_type" name="hazard_type" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 border border-gray-300 focus:outline-indigo-600 sm:text-sm">
+                <select id="hazard_type" name="hazard_type" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 ring-1 ring-inset ring-gray-300 focus:outline-indigo-600 sm:text-sm">
                     <option value="" disabled selected>Select Hazard Type</option>
                     <option value="Landslide">Landslide</option>
                     <option value="Flood">Flood</option>
@@ -56,7 +56,7 @@
 
                 <!-- Status -->
                 <label for="status" class="block text-sm font-medium text-gray-700">Status:</label>
-                <select id="status" name="status" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 border border-gray-300 focus:outline-indigo-600 sm:text-sm">
+                <select id="status" name="status" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 ring-1 ring-inset ring-gray-300 focus:outline-indigo-600 sm:text-sm">
                     <option value="Active">Active</option>
                     <option value="Controlled">Controlled</option>
                     <option value="Resolved">Resolved</option>

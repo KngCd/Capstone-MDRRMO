@@ -6,13 +6,13 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <!-- Leaflet CSS (Use only one: CDN or local) -->
         <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> -->
         <!-- OR: Use local if you prefer -->
         <link rel="stylesheet" href="css/leaflet.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/tailwind/style.css">
+        <link rel="stylesheet" href="css/tailwind/output.css">
 
         <!-- Other Required CSS -->
         <link rel="stylesheet" href="css/L.Control.Locate.min.css">
@@ -38,10 +38,10 @@
         <div id="form-container">
             <form id="locationForm" class="mb-4 w-[250px]">
                 <label>Select Location:</label>
-                <input type="text" id="location" name="location" readonly required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"><br>
+                <input type="text" id="location" name="location" readonly required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"><br>
 
                 <label>Description:</label>
-                <textarea id="description" name="description" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea><br>
+                <textarea id="description" name="description" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea><br>
 
                 <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 
                 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add to Map</button>
