@@ -65,3 +65,8 @@ html, body, #map {
 .loader-hidden {
     display: none !important;
 }
+
+.menu-section{
+    margin-bottom: 20px;
+    cursor: pointer;
+}
