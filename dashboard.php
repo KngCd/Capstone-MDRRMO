@@ -16,18 +16,16 @@
     <main class="flex">
         <?php include("components/sidebar.php"); ?>
         <!-- Main Content -->
-        <section class="flex-1 bg-black h-screen">
-            <div class="container px-5 py-5 grid grid-col grid-cols-5 gap-4 bg-slate-400 mx-auto">
+        <section class="flex-1 bg-black h-screen container mx-auto">
+            <div class="px-5 py-5 grid grid-col grid-cols-4 gap-4 bg-slate-400 mx-auto">
                 <div class="bg-white">
                     <p class="text-[21px]">Dashboard</p>
                 </div>
                 <div class="bg-white col-span-2">
                     <p>Search</p>
                 </div>
-                <div class="bg-white">
+                <div class="bg-white flex justify-between">
                     <p>Date</p>
-                </div>
-                <div class="bg-white">
                     <p>Icon</p>
                 </div>
             </div>
@@ -35,5 +33,6 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@9.0.3"></script>
 </body>
 </html>

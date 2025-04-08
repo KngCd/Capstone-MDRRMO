@@ -9,9 +9,9 @@ function isMapActive() {
 }
 ?>
 
-<div class="relative">
+<!-- <div class="relative"> -->
     <!-- Sidebar -->
-    <aside id="sidebar" class="overflow-y-auto bg-[#F7F7F7] flex flex-col h-screen transition-all duration-300 ease-in-out w-[342px]">
+    <aside id="sidebar" class="overflow-y-auto bg-[#F7F7F7] flex flex-col transition-all duration-300 ease-in-out w-[342px]">
         
         <!-- Top Section-->
         <div>
@@ -122,7 +122,7 @@ function isMapActive() {
         style="transform: translateX(-50%) translateY(-10px);">
         <i id="sidebar-icon" class="fa-solid fa-angle-left text-lg"></i>
     </button>
-</div>
+<!-- </div> -->
 
 <script>
     const sidebar = document.getElementById("sidebar");
