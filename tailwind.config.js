@@ -13,5 +13,6 @@ export default {
       },
     },
   },
+  darkMode: "false", // or 'media' or 'class'
   plugins: [],
 };

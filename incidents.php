@@ -27,7 +27,6 @@
         <!-- Main Content -->
         <section class="flex-1 p-6 overflow-y-auto">
             <table id="example" class="hover" style="width:100%">
-                    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -500,10 +499,10 @@
         </section>
     </main>
 
-<!-- DataTable Initialization Script -->
-<script>
-    // Initialize DataTable
-    $('#example').DataTable();;
-</script>
+    <!-- DataTable Initialization Script -->
+    <script>
+        // Initialize DataTable
+        $('#example').DataTable();;
+    </script>
 </body>
 </html>

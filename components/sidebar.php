@@ -60,7 +60,7 @@ function isMapActive() {
                 <div class="bg-gray-200">
                     <a href="incidents.php" class="w-full no-underline">
                         <div class="flex gap-3 p-4 items-center hover:bg-indigo-100 hover:text-indigo-500 active:bg-indigo-100 focus:outline-none focus:ring focus:ring-indigo-300 menu-section
-                        <?php echo isActive('incidents.php'); ?>" style="padding-left: 35px !important; margin-bottom: 15px !important;">
+                        <?php echo isActive('incidents.php'); ?>" style="padding-left: 35px !important; margin-bottom: 10px !important;">
                             <i class="fa-solid fa-map-location-dot"></i>
                             <span class="font-normal text-[15px] w-full max-w-[304px]">Incident Map</span>
                         </div>
