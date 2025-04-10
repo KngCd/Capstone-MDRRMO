@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- DataTables CSS -->
+    <!-- <link href="https://cdn.datatables.net/2.2.2/css/dataTables.tailwindcss.css" rel="stylesheet" /> -->
     <link href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" rel="stylesheet" />
 
     <!-- jQuery -->
@@ -17,6 +18,7 @@
 
     <!-- DataTables -->
     <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+    <!-- <script src="https://cdn.datatables.net/2.2.2/js/dataTables.tailwindcss.js"></script> -->
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,9 +27,9 @@
     <main class="flex h-full">
         <?php include("components/sidebar.php"); ?>
         <!-- Main Content -->
-        <section class="flex-1 p-6 overflow-y-auto">
-            <table id="example" class="hover" style="width:100%">
-                <thead>
+        <section class="flex-1 p-6 overflow-y-auto text-[15px]">
+            <table id="example" class="hover w-full text-sm text-left text-gray-700" style="width:100%">
+                <thead class="bg-gray-100 text-xs uppercase text-gray-600">
                     <tr>
                         <th>Name</th>
                         <th>Position</th>
@@ -37,7 +39,7 @@
                         <th>Salary</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="divide-y divide-gray-200">
                     <tr>
                         <td>Tiger Nixon</td>
                         <td>System Architect</td>
@@ -501,8 +503,78 @@
 
     <!-- DataTable Initialization Script -->
     <script>
-        // Initialize DataTable
-        $('#example').DataTable();;
+        // $(document).ready(function() {
+        //     $('#example').DataTable({
+        //         // Customize DataTable styling
+        //         dom: '<"flex flex-col sm:flex-row justify-between items-center mb-4"' + 
+        //              '<"flex items-center space-x-2"l>' +
+        //              '<"flex items-center space-x-2"f>>' +
+        //              'rt' +
+        //              '<"flex flex-col sm:flex-row justify-between items-center mt-4"' +
+        //              '<"text-sm text-gray-700"i>' +
+        //              '<"space-x-2"p>>',
+                     
+        //         // Custom classes for elements
+        //         oClasses: {
+        //             sFilter: "relative",
+        //             sLength: "relative",
+        //             sProcessing: "bg-blue-500 text-white",
+        //             sPaging: "relative z-0 inline-flex shadow-sm rounded-md"
+        //         },
+    
+        //         // Language customization
+        //         language: {
+        //             search: "",
+        //             searchPlaceholder: "Search...",
+        //             lengthMenu: "_MENU_ per page",
+        //             paginate: {
+        //                 first: '<i class="fas fa-angle-double-left"></i>',
+        //                 previous: '<i class="fas fa-angle-left"></i>',
+        //                 next: '<i class="fas fa-angle-right"></i>',
+        //                 last: '<i class="fas fa-angle-double-right"></i>'
+        //             }
+        //         },
+    
+        //         // Add wrapper classes
+        //         initComplete: function() {
+        //             // Style the search input
+        //             $('.dataTables_filter input').addClass(
+        //                 'rounded-lg border-gray-300 pl-10 pr-4 py-2 focus:border-blue-500 focus:ring-blue-500 sm:text-sm'
+        //             );
+                    
+        //             // Style the length select
+        //             $('.dataTables_length select').addClass(
+        //                 'rounded-lg border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:ring-blue-500 sm:text-sm'
+        //             );
+    
+        //             // Style pagination buttons
+        //             $('.paginate_button').addClass(
+        //                 'relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50'
+        //             );
+    
+        //             $('.paginate_button.current').addClass(
+        //                 'z-10 bg-blue-600 border-blue-600 text-white hover:bg-blue-700'
+        //             ).removeClass('bg-white text-gray-700');
+    
+        //             // Add search icon
+        //             $('.dataTables_filter').prepend(
+        //                 '<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">' +
+        //                 '<i class="fas fa-search text-gray-400"></i></div>'
+        //             );
+        //         }
+        //     });
+        // });
+        new DataTable('#example');
+        $(document).ready(function() {
+    // Wait for DataTables to initialize
+    var searchInput = $('div.dt-search input');
+    
+    // Add a placeholder text
+    searchInput.attr('placeholder', 'Search here...');
+
+    // Optionally, hide the label if it's present
+    $('div.dt-search label').hide();
+});
     </script>
 </body>
 </html>

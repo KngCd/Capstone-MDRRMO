@@ -157,9 +157,9 @@ function isMapActive() {
 
     sidebarToggle.addEventListener("click", () => {
         isSidebarOpen = !isSidebarOpen;
-
+        
         if (isSidebarOpen) {
-            sidebar.classList.remove("w-[80px]");
+            sidebar.classList.remove("w-[65px]");
             sidebar.classList.add("w-[342px]", "overflow-x-hidden");
             sidebarToggle.style.left = "342px";
             sidebarIcon.classList.replace("fa-angle-right", "fa-angle-left");
@@ -186,7 +186,7 @@ function isMapActive() {
 
             // Adjust menu items' width and content when sidebar is open
             document.querySelectorAll(".menu-section").forEach(el => {
-                el.classList.remove("w-[80px]");
+                el.classList.remove("w-[65px]");
                 el.classList.add("w-[304px]");  // Full width when sidebar is open
                 el.classList.remove("justify-center");
                 el.classList.add("justify-start");
@@ -211,7 +211,7 @@ function isMapActive() {
 
         } else {
             sidebar.classList.remove("w-[342px]");
-            sidebar.classList.add("w-[80px]", "overflow-x-hidden");
+            sidebar.classList.add("w-[65px]", "overflow-x-hidden");
             sidebarToggle.style.left = "80px";
             sidebarIcon.classList.replace("fa-angle-left", "fa-angle-right");
 
@@ -238,7 +238,7 @@ function isMapActive() {
             // Adjust menu items' width and content when sidebar is closed
             document.querySelectorAll(".menu-section").forEach(el => {
                 el.classList.remove("w-[304px]");
-                el.classList.add("w-[80px]");  // Reduce width when sidebar is closed
+                el.classList.add("w-[65px]");  // Reduce width when sidebar is closed
                 el.classList.remove("justify-start");
                 el.classList.add("justify-center");
             });
