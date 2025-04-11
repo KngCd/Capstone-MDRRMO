@@ -103,88 +103,146 @@ html, body, #map {
 /* END SIDEBAR */
 
 /* DATA TABLE */
+/* Flex container for proper alignment */
+.top {
+    display: flex !important;
+    align-items: center !important; /* Vertically center all children */
+    gap: 1rem !important; /* Optional spacing between items */
+    flex-wrap: wrap !important; /* Allow wrap on smaller screens */
+}
+
+/* Ensure inner elements don't break the alignment */
+.dataTables_length,
+.dt-buttons,
+.dataTables_filter {
+    display: flex !important;
+    align-items: center !important;
+}
 
 /* Filter per page */
-div.dt-length .dt-input {
+div.dataTables_wrapper .dataTables_length {
     background-color: transparent !important; /* No fill */
-    border: 1px solid #d1d5db !important; /* Light gray border */
     color: #4b5563 !important; /* Dark text color */
     border-radius: 0.375rem !important; /* Rounded corners */
     padding: 0.5rem !important; /* Padding */
     font-size: 1rem !important;
     width: auto !important; /* Adjust to fit content */
     transition: all 0.3s ease !important;
-}
-
-/* Focus effect for the select element */
-div.dt-length .dt-input:focus {
-    outline: none !important;
-    border-color: #93c5fd !important; /* Light blue focus border */
-    box-shadow: 0 0 0 2px rgba(147, 197, 253, 0.5) !important; /* Light blue focus shadow */
+    margin-right: 10px !important;
 }
 
 /* Apply the same style to the options */
-div.dt-length .dt-input option {
+div.dataTables_wrapper .dataTables_length select, 
+div.dataTables_wrapper .dataTables_length select option {
     background-color: transparent !important; /* No fill */
     color: #4b5563 !important; /* Dark text color */
-    padding: 0.5rem 1rem !important; /* Padding */
+    padding: 0.5rem !important; /* Padding */
     font-size: 1rem !important;
-    border: none !important; /* Remove any default borders */
-}
-
-/* Search */
-div.dt-search label {
-    display: none !important; /* Hide the label */
-}
-
-div.dt-search .dt-input {
-    background-color: transparent !important; /* No fill */
     border: 1px solid #d1d5db !important; /* Light gray border */
-    color: #4b5563 !important; /* Dark text color */
-    border-radius: 0.375rem !important; /* Rounded corners */
-    padding: 0.5rem 1rem !important; /* Padding */
-    width: 300px !important; /* Full width */
-    font-size: 1rem !important;
-    padding-left: 1rem !important; /* Space for the placeholder */
-    transition: all 0.3s ease !important;
 }
-
-div.dt-search .dt-input::placeholder {
-    color: #d1d5db !important; /* Light gray placeholder */
-}
-
-div.dt-search .dt-input:focus {
+/* Focus effect for the select element */
+div.dataTables_wrapper .dataTables_length select:focus {
     outline: none !important;
     border-color: #93c5fd !important; /* Light blue focus border */
     box-shadow: 0 0 0 2px rgba(147, 197, 253, 0.5) !important; /* Light blue focus shadow */
 }
 
-/* Add placeholder text to input using CSS */
-div.dt-search .dt-input {
-    ::placeholder {
-        content: "Search here..." !important;
-    }
+
+/* Export Button */
+div.dt-buttons .dt-button.buttons-collection {
+    all: unset !important; /* Reset inherited styles */
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.5rem !important; /* Padding */
+    font-size: 1rem !important;
+    color: #4b5563 !important; /* Dark text color */
+    background-color: transparent !important; /* Transparent background */
+    border: 1px solid #d1d5db !important; /* Light gray border */
+    border-radius: 0.375rem !important; /* Rounded corners */
+    cursor: pointer !important;
+    transition: all 0.3s ease !important; /* Smooth transition for hover/focus effects */
+    align-items: center !important; /* Center items vertically */
 }
 
-/* Main pagination container */
-div.dt-container .dt-paging {
+/* Arrow icon styling */
+div.dt-buttons .dt-button-down-arrow {
+    margin-left: 0.25rem !important;
+    margin-top: 0.35rem !important;
+}
+
+/* Focus effect for the button */
+div.dt-buttons .dt-button.buttons-collection:focus {
+    outline: none !important;
+    border-color: #93c5fd !important; /* Light blue focus border */
+    box-shadow: 0 0 0 2px rgba(147, 197, 253, 0.5) !important; /* Light blue focus shadow */
+}
+
+/* Hover effect */
+div.dt-buttons .dt-button.buttons-collection:hover {
+    background-color: #f3f4f6 !important; /* Light gray background on hover */
+    border-color: #d1d5db !important; /* Retain light gray border */
+    color: #1f2937 !important; /* Darker text color on hover */
+}
+
+/* Button Collection Background */
+div.dt-button-background {
+    display: none !important;
+}
+
+/* Button Collections */
+div.dt-button-collection {
+    background-color: #fff !important; /* White background */
+    border-radius: 0.375rem !important; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important; /* Shadow effect */
+    padding: 0.5rem !important; /* Padding */
+    margin-top: 0.5rem !important; /* Space from the button */
+}
+
+
+/* Search */
+div.dataTables_wrapper .dataTables_filter {
+    margin-left: auto !important;
     display: flex !important;
-    /* justify-content: center !important; */
+    align-items: center !important;
+}
+
+/* Search input styling */
+div.dataTables_filter input[type="search"] {
+    background-color: transparent !important;
+    border: 1px solid #d1d5db !important; /* Light gray border */
+    color: #4b5563 !important; /* Dark text color */
+    border-radius: 0.375rem !important; /* Rounded corners */
+    padding: 0.5rem 1rem !important;
+    width: 300px !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Placeholder styling */
+div.dataTables_filter input[type="search"]::placeholder {
+    color: #d1d5db !important;
+}
+
+/* Focus styling */
+div.dataTables_filter input[type="search"]:focus {
+    outline: none !important;
+    border-color: #93c5fd !important; /* Light blue border */
+    box-shadow: 0 0 0 2px rgba(147, 197, 253, 0.5) !important;
+}
+
+
+/* Main pagination container */
+div.dataTables_paginate {
+    display: flex !important;
     padding: 0.50rem !important;
     background-color: #fff !important;
     border-radius: 1rem !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Navigation wrapper styling */
-div.dt-container .dt-paging nav {
-    all: unset !important;
-    /* display: flex !important; */
-    gap: 10px !important;
+    align-items: center !important; /* Ensure vertical alignment */
 }
 
 /* Reset button styles and enforce look */
-div.dt-container .dt-paging .dt-paging-button {
+div.dataTables_wrapper .dataTables_paginate .paginate_button {
     all: unset !important; /* Reset inherited styles */
     display: inline-block !important;
     padding: 5px 10px !important;
@@ -194,16 +252,14 @@ div.dt-container .dt-paging .dt-paging-button {
     border-radius: 5px !important;
     cursor: pointer !important;
     transition: background-color 0.2s ease-in-out, color 0.2s !important;
-    min-width: 20px!important;
+    min-width: 20px !important;
     box-shadow: none !important;
     margin: 0 1px 0 1px !important;
 }
 
 /* Hover state for buttons (except current or disabled) */
-div.dt-container .dt-paging .dt-paging-button:not(.first):not(.previous):not(.next):not(.last):hover:not(.disabled):not(.current) {
+div.dataTables_wrapper .dataTables_paginate .paginate_button:not(.first):not(.previous):not(.next):not(.last):hover:not(.disabled):not(.current) {
     background-color: #275aff !important;
-    display: inline-block !important;
-    padding: 5px 10px !important;
     color: white !important;
     font-size: 0.85rem !important;
     font-family: inherit !important;
@@ -212,23 +268,19 @@ div.dt-container .dt-paging .dt-paging-button:not(.first):not(.previous):not(.ne
     transition: background-color 0.2s ease-in-out, color 0.2s !important;
 }
 
-div.dt-container .dt-paging .dt-paging-button.first:hover:not(.disabled),
-div.dt-container .dt-paging .dt-paging-button.previous:hover:not(.disabled),
-div.dt-container .dt-paging .dt-paging-button.next:hover:not(.disabled),
-div.dt-container .dt-paging .dt-paging-button.last:hover:not(.disabled) {
+/* Hover state for all main navigation (including the first, next, previous, and last) buttons except disabled */
+div.dataTables_wrapper .dataTables_paginate .paginate_button:hover:not(.disabled) {
     background-color: #275aff !important;
     color: white !important;
-    font-size: 1rem !important;
-    padding: 3px 7px !important;
+    font-size: 0.75rem !important;
+    padding: 5px 10px !important;
     border-radius: 5px !important;
-    cursor: pointer !important;
     transition: background-color 0.2s ease-in-out, color 0.2s !important;
 }
 
-
 /* Active/current page button */
-html body div.dt-container .dt-paging .dt-paging-button.current,
-html body div.dt-container .dt-paging .dt-paging-button.current:hover {
+html body div.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+html body div.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
     all: unset !important;
     display: inline-block !important;
     padding: 5px 10px !important;
@@ -246,22 +298,31 @@ html body div.dt-container .dt-paging .dt-paging-button.current:hover {
 }
 
 /* Disabled buttons */
-div.dt-container .dt-paging .dt-paging-button.disabled {
+div.dataTables_paginate .paginate_button.disabled {
     all: unset !important;
-    color: rgba(0, 0, 0, 0.3) !important;
-    background-color: #f8f9fa !important;
+    color: #888888 !important; /* Gray color for disabled buttons */
     border: 1px solid #dee2e6 !important;
-    cursor: default !important;
-    pointer-events: none !important;
+    cursor: not-allowed !important; /* Change cursor to not-allowed */
+    pointer-events: none !important; /* Disable pointer events */
 }
 
 /* First, Previous, Next, Last buttons styling */
-div.dt-container .dt-paging .dt-paging-button.first,
-div.dt-container .dt-paging .dt-paging-button.previous,
-div.dt-container .dt-paging .dt-paging-button.next,
-div.dt-container .dt-paging .dt-paging-button.last {
+div.dataTables_wrapper .dataTables_paginate .paginate_button.first,
+div.dataTables_wrapper .dataTables_paginate .paginate_button.previous,
+div.dataTables_wrapper .dataTables_paginate .paginate_button.next,
+div.dataTables_wrapper .dataTables_paginate .paginate_button.last {
     all: unset !important;
-    font-size: 1rem !important;
-    padding: 3px 7px !important;
+    font-size: 0.75rem !important;
+    padding: 5px 10px !important;
     border-radius: 5px !important;
+}
+
+/* Disable hover and pointer events for First/Previous/Next/Last when disabled */
+div.dataTables_wrapper .dataTables_paginate .paginate_button.first.disabled,
+div.dataTables_wrapper .dataTables_paginate .paginate_button.previous.disabled,
+div.dataTables_wrapper .dataTables_paginate .paginate_button.next.disabled,
+div.dataTables_wrapper .dataTables_paginate .paginate_button.last.disabled {
+    color: #888888 !important; /* Gray text for disabled buttons */
+    pointer-events: none !important; /* Disable pointer events */
+    cursor: not-allowed !important; /* Disable cursor hover */
 }

@@ -10,15 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <!-- <link href="https://cdn.datatables.net/2.2.2/css/dataTables.tailwindcss.css" rel="stylesheet" /> -->
-    <link href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" rel="stylesheet" />
+    <!-- <link href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" rel="stylesheet" /> -->
+    <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css" rel="stylesheet" />
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 
-    <!-- DataTables -->
-    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
-    <!-- <script src="https://cdn.datatables.net/2.2.2/js/dataTables.tailwindcss.js"></script> -->
+    <!-- DataTables JS -->
+    <!-- <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script> -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+    <!-- Buttons Extension -->
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.colVis.min.js"></script>
+
+    <!-- File Export Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -27,8 +40,8 @@
     <main class="flex h-full">
         <?php include("components/sidebar.php"); ?>
         <!-- Main Content -->
-        <section class="flex-1 p-6 overflow-y-auto text-[15px]">
-            <table id="example" class="hover w-full text-sm text-left text-gray-700" style="width:100%">
+        <section class="wrapper flex-1 p-6 overflow-y-auto text-[15px]">
+            <table id="example" class="hover w-full text-sm text-left text-gray-700" style="width: 100% !important; margin: 10px 0 10px 0 !important;">
                 <thead class="bg-gray-100 text-xs uppercase text-gray-600">
                     <tr>
                         <th>Name</th>
@@ -564,17 +577,48 @@
         //         }
         //     });
         // });
-        new DataTable('#example');
-        $(document).ready(function() {
-    // Wait for DataTables to initialize
-    var searchInput = $('div.dt-search input');
-    
-    // Add a placeholder text
-    searchInput.attr('placeholder', 'Search here...');
+        $(document).ready(function () {
+            new DataTable('#example', {
+                dom: '<"top"lBf>rt<"bottom"ip><"clear">', // Keeps your current structure
+                buttons: [
+                    {
+                        extend: 'collection',
+                        text: 'Export',
+                        autoClose: true,
+                        buttons: [
+                            'copy',
+                            'csv',
+                            'excel',
+                            'pdf',
+                            'print'
+                        ]
+                    }
+                ],
+                "language": {
+                    "paginate": {
+                        "first": "<<",   // Use << for first page
+                        "previous": "<", // Use < for previous page
+                        "next": ">",     // Use > for next page
+                        "last": ">>"     // Use >> for last page
+                    }
+                },
+                "pagingType": "full_numbers" // This ensures that the First and Last buttons appear
+            });
+        });
 
-    // Optionally, hide the label if it's present
-    $('div.dt-search label').hide();
-});
+        $(document).ready(function () {
+
+            // Extract the input from the label
+            const $label = $('div.dataTables_filter label');
+            const $input = $label.find('input');
+
+            // Append input outside of label and remove label
+            $label.parent().append($input);
+            $label.remove();
+
+            // Set placeholder text
+            $input.attr('placeholder', 'Search here...');
+        });
     </script>
 </body>
 </html>
